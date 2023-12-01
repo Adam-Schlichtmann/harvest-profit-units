@@ -8,9 +8,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "rm -rf ./dist && babel src -d dist --source-maps",
+    "build": "yarn clean && babel src -d dist --source-maps",
     "clean": "rm -rf ./dist",
-    "test": "jest test/ --coverage"
+    "test": "jest"
   },
   "files": [
     "LICENSE.md",
@@ -18,19 +18,15 @@
     "dist"
   ],
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/!(index).{js,jsx}"
-    ],
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    },
-    "testURL": "http://localhost/"
+    "preset": "ts-jest",
+    "testEnvironment": "node"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7",
     "@babel/core": "^7",
     "@babel/preset-react": "^7",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/jest": "^29.5.10",
     "babel-eslint": "^10",
     "babel-jest": "^26.6.0",
     "babel-preset-airbnb": "^5.0.0",
@@ -40,6 +36,8 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "jest": "^26.6.0"
+    "jest": "^29.1.1",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.2"
   }
 }
