@@ -1,6 +1,3 @@
 {
-  "presets": [
-    "airbnb",
-    '@babel/react',
-  ]
+  "presets": ["airbnb", "@babel/react"]
 }
